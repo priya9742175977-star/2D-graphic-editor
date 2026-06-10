@@ -1,0 +1,45 @@
+#include <math.h>
+
+void clearPicture() {
+int i, j;
+
+for(i = 0; i < HEIGHT; i++) {  
+    for(j = 0; j < WIDTH; j++) {  
+        picture[i][j] = EMPTY;  
+    }  
+}
+
+}
+
+void displayPicture() {
+int i, j;
+
+for(i = 0; i < HEIGHT; i++) {  
+    for(j = 0; j < WIDTH; j++) {  
+        printf("%c", picture[i][j]);  
+    }  
+    printf("\n");  
+}
+
+}
+
+void setPixel(int x, int y) {
+if(x >= 0 && x < WIDTH && y >= 0 && y < HEIGHT) {
+picture[y][x] = PIXEL;
+}
+}
+
+void drawLine(int x1, int y1, int x2, int y2) {
+int dx = abs(x2 - x1);
+int dy = abs(y2 - y1);
+int steps = (dx > dy) ? dx : dy;
+
+float xInc = (float)(x2 - x1) / steps;  
+float yInc = (float)(y2 - y1) / steps;  
+
+float x = x1;  
+float y = y1;  
+
+int i;  
+for(i = 0; i <= steps; i++) {  
+    
