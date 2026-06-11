@@ -251,7 +251,7 @@ void modifyObject() {
 
     if(index < 0 ||
        index >= objectCount ||
-       !objects[index].active)
+       !objects[index].ac tive)
         return;
 
     Object *obj = &objects[index];
